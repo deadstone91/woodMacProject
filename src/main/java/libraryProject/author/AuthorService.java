@@ -25,4 +25,8 @@ public class AuthorService {
 	public Optional<Author> getAuthor(int authorId) {
 		return authorRepo.findById(authorId);
 	}
+
+	public void addTopic(Author author) {
+		authorRepo.save(author);
+	}
 }
