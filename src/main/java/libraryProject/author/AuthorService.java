@@ -29,4 +29,8 @@ public class AuthorService {
 	public void addTopic(Author author) {
 		authorRepo.save(author);
 	}
+
+	public void updateAuthor(int authorId, Author author) {
+		authorRepo.save(author);
+	}
 }
