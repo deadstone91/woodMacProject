@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.apache.catalina.TomcatPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -36,5 +37,10 @@ public class AuthorConstructor {
 	@PutMapping("/authors/{authorId}")
 	public void updateAuthor(@RequestBody Author author, @PathVariable int authorId){
 		authorService.updateAuthor(authorId, author);
+	}
+	
+	@DeleteMapping("authors/{authorId}")
+	public void deleteAuthor(@PathVariable int authorId){
+		authorService.deleteAuthor(authorId);
 	}
 }

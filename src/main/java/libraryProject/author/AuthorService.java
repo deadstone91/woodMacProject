@@ -33,4 +33,10 @@ public class AuthorService {
 	public void updateAuthor(int authorId, Author author) {
 		authorRepo.save(author);
 	}
+
+	public void deleteAuthor(int authorId) {
+		authorRepo.deleteById(authorId);
+	}
+	
+	
 }
