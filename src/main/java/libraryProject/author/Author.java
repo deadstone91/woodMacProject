@@ -1,16 +1,21 @@
 package libraryProject.author;
 
-public class Author {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class Author {
+	
+	@Id
 	private int authorId;
-	private int authorFirstname;
-	private int authorSurname;
+	private String authorFirstname;
+	private String authorSurname;
 	
 	public Author() {
 		
 	}
 	
-	public Author(int authorId, int authorFirstname, int authorSurname) {
+	public Author(int authorId, String authorFirstname, String authorSurname) {
 		super();
 		this.authorId = authorId;
 		this.authorFirstname = authorFirstname;
@@ -26,19 +31,19 @@ public class Author {
 		this.authorId = authorId;
 	}
 
-	public int getAuthorFirstname() {
+	public String getAuthorFirstname() {
 		return authorFirstname;
 	}
 
-	public void setAuthorFirstname(int authorFirstname) {
+	public void setAuthorFirstname(String authorFirstname) {
 		this.authorFirstname = authorFirstname;
 	}
 
-	public int getAuthorSurname() {
+	public String getAuthorSurname() {
 		return authorSurname;
 	}
 
-	public void setAuthorSurname(int authorSurname) {
+	public void setAuthorSurname(String authorSurname) {
 		this.authorSurname = authorSurname;
 	}
 	
