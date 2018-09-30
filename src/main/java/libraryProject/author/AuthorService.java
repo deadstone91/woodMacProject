@@ -2,6 +2,7 @@ package libraryProject.author;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.management.loading.PrivateClassLoader;
 
@@ -19,5 +20,9 @@ public class AuthorService {
 		authorRepo.findAll().forEach(author::add);
 		return author;
 		
+	}
+
+	public Optional<Author> getAuthor(int authorId) {
+		return authorRepo.findById(authorId);
 	}
 }
