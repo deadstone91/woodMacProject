@@ -2,6 +2,7 @@ package libraryProject.book;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,4 +18,12 @@ public class BookService {
 		bookRepo.findByAuthorId(authorId).forEach(books::add);
 		return books;
 	}
+
+	public Optional<Book> getBook(int bookId) {
+		return bookRepo.findById(bookId);
+	}
+	
+	
+	
+	
 }
