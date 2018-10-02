@@ -1,8 +1,14 @@
 package libraryProject.book;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.apache.catalina.TomcatPrincipal;
+
+import libraryProject.author.Author;
+
+@Entity
 public class Book {
 
 	@Id
@@ -10,18 +16,18 @@ public class Book {
 	private String bookName;
 	private String bookGenre;
 	@ManyToOne
-	private int authorId;
+	private Author author;
 	
 	public Book() {
 		
 	}
 
-	public Book(String bookId, String bookName, String bookGenre, int authorId) {
+	public Book(String bookId, String bookName, String bookGenre, Author author) {
 		super();
 		this.bookId = bookId;
 		this.bookName = bookName;
 		this.bookGenre = bookGenre;
-		this.authorId = authorId;
+		this.author = author;
 	}
 
 	public String getBookId() {
@@ -48,13 +54,15 @@ public class Book {
 		this.bookGenre = bookGenre;
 	}
 
-	public int getAuthorId() {
-		return authorId;
+	public Author getAuthor() {
+		return author;
 	}
 
-	public void setAuthorId(int authorId) {
-		this.authorId = authorId;
+	public void setAuthor(Author author) {
+		this.author = author;
 	}
+
+	
 	
 	
 	
