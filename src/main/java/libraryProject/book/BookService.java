@@ -22,6 +22,11 @@ public class BookService {
 	public Optional<Book> getBook(int bookId) {
 		return bookRepo.findById(bookId);
 	}
+
+	public void addBook(Book book) {
+		bookRepo.save(book);
+		
+	}
 	
 	
 	

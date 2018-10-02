@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import libraryProject.author.Author;
 
 
+
+
+
 @RestController
 public class BookController {
 	
@@ -31,7 +34,8 @@ public class BookController {
 	}
 	
 	@PostMapping("/authors/{authorId}/book")
-	public void addBook(@RequestBody Book book, @PathVariable int bookId){
-		book.setAuthor(author);;
+	public void addBook(@RequestBody Book book, @PathVariable int authorId){
+		book.setAuthor(new Author(authorId,"",""));
+		bookService.addBook(book);
 	}
 }
