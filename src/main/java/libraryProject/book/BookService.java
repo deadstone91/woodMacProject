@@ -33,7 +33,7 @@ public class BookService {
 		
 	}
 
-	public void deleteCourse(int bookId) {
+	public void deleteBook(int bookId) {
 		bookRepo.deleteById(bookId);
 		
 	}

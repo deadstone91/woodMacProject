@@ -49,7 +49,7 @@ public class BookController {
 	
 	@DeleteMapping("/authors/{authorId}/books/{bookId}")
 	public void deleteBook(@PathVariable int bookId){
-		bookService.deleteCourse(bookId);
+		bookService.deleteBook(bookId);
 	}
 	
 }
